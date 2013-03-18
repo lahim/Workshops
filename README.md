@@ -8,7 +8,7 @@ REST or notREST?
 
     http://prezi.com/pkynlrsyx4zm/rest-or-notrest/
 
-Simple RESTfull application
+Simple RESTful application
 ---------------------------
 
 > How to run it?
