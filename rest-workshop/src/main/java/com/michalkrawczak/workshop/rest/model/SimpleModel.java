@@ -2,9 +2,14 @@ package com.michalkrawczak.workshop.rest.model;
 
 import java.util.Date;
 
+/**
+ * User: lahim
+ * Date: 3/18/13
+ */
 public class SimpleModel {
 
     private String message;
+    private String value;
     private Date date;
 
     public SimpleModel() {
@@ -21,6 +26,14 @@ public class SimpleModel {
 
     public void setMessage(String message) {
         this.message = message;
+    }
+
+    public String getValue() {
+        return value;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
     }
 
     public Date getDate() {
