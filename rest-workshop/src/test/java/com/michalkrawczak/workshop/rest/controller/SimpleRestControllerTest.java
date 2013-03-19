@@ -1,5 +1,6 @@
 package com.michalkrawczak.workshop.rest.controller;
 
+import com.michalkrawczak.workshop.rest.MockContainer;
 import com.michalkrawczak.workshop.rest.model.SimpleModel;
 import org.junit.After;
 import org.junit.Before;
@@ -24,7 +25,10 @@ public class SimpleRestControllerTest {
     public void setUp() throws Exception {
         logger.debug("---- setUp");
 
+        MockContainer mock = MockContainer.getMockContainer();
+
         controller = new SimpleRestController();
+        controller.setSimpleService(mock.simpleService);
     }
 
     @After
@@ -44,13 +48,15 @@ public class SimpleRestControllerTest {
         assertNotNull(model);
 
         assertNotNull(model.getMessage());
-        assertEquals("Hi, Willson!", model.getMessage());
+        assertEquals("Mock message", model.getMessage());
         logger.debug(String.format("message value: %s", model.getMessage()));
 
         assertNotNull(model.getDate());
         logger.debug(String.format("date value: %s", model.getDate().toString()));
 
-        assertNull(model.getValue());
+        assertNotNull(model.getValue());
+        assertEquals("Mock value", model.getValue());
+        logger.debug(String.format("value: %s", model.getValue()));
 
         logger.debug("Test passed!");
     }
@@ -71,14 +77,43 @@ public class SimpleRestControllerTest {
         assertNotNull(model);
 
         assertNotNull(model.getMessage());
-        assertEquals("Simple model was created successfully!", model.getMessage());
+        assertEquals("Mock message", model.getMessage());
         logger.debug(String.format("model message: %s", model.getMessage()));
 
         assertNotNull(model.getDate());
         logger.debug(String.format("model date: %s", model.getDate().toString()));
 
         assertNotNull(model.getValue());
-        assertEquals("Test mock value", model.getValue());
+        assertEquals("Mock value", model.getValue());
+        logger.debug(String.format("model value: %s", model.getValue()));
+
+        logger.debug("Test passed!");
+    }
+
+    @Test
+    public void updateTest() throws Exception {
+        logger.debug("---- updateTest");
+
+        final SimpleModel newModel = new SimpleModel();
+        final SimpleModel model;
+
+        newModel.setValue("Test mock value");
+
+        assertNotNull(controller);
+        assertNotNull(newModel);
+
+        model = controller.update("ID", newModel);
+        assertNotNull(model);
+
+        assertNotNull(model.getMessage());
+        assertEquals("Mock message", model.getMessage());
+        logger.debug(String.format("model message: %s", model.getMessage()));
+
+        assertNotNull(model.getDate());
+        logger.debug(String.format("model date: %s", model.getDate().toString()));
+
+        assertNotNull(model.getValue());
+        assertEquals("Mock value", model.getValue());
         logger.debug(String.format("model value: %s", model.getValue()));
 
         logger.debug("Test passed!");

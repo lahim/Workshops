@@ -1,0 +1,6 @@
+<web-resource-collection>
+    <http-method>GET</http-method>
+    <http-method>HEAD</http-method>
+    <http-method>PUT</http-method>
+    <http-method>POST</http-method>
+</web-resource-collection>

@@ -20,6 +20,11 @@ public class SimpleModel {
         this.date = new Date();
     }
 
+    public SimpleModel(String message, String value) {
+        this.message = message;
+        this.value = value;
+    }
+
     public String getMessage() {
         return message;
     }
