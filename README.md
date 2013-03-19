@@ -4,9 +4,7 @@ Workshops
 REST or notREST?
 ----------------
 
-> Prezentation online:
-
-    http://prezi.com/pkynlrsyx4zm/rest-or-notrest/
+> My presentation about this workshop you can find [here](http://prezi.com/pkynlrsyx4zm/rest-or-notrest/?kw=view-pkynlrsyx4zm&rc=ref-34509697).
 
 Simple RESTful application
 ---------------------------
