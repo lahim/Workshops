@@ -1,5 +1,7 @@
-Workshops
-=========
+Workshop
+========
+Here you can find an example of a simple RESTful application in Spring.
+
 
 REST or notREST?
 ----------------
